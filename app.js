@@ -16,9 +16,13 @@ function eleccionPC(arr) {
 
 function jugar(userChoice) {
     const PCRAND = eleccionPC(choises)
+    console.log("El usuario Eligio:", userChoice);
+    console.log("Computer Eligio:", PCRAND);
+    
+    
     if (userChoice === PCRAND)
     {return "Empate"}
-    else return `pc escogio ${PCRAND} usuario escogio ${userChoice}`
+    else return "no se"
 }
 
 

@@ -14,16 +14,28 @@ function eleccionPC(arr) {
     return arr[num]
 };
 
+const GanaUser = (Opciones, elecciondecomputadora) => {
+    for (const opcion of Opciones) {
+        if (opcion === elecciondecomputadora) {
+            return true
+        }
+        return false
+    }
+}
+
 function jugar(userChoice) {
     const PCRAND = eleccionPC(choises)
     console.log("El usuario Eligio:", userChoice);
     console.log("Computer Eligio:", PCRAND);
-    
-    
-    if (userChoice === PCRAND)
-    {return "Empate"}
-    else return "no se"
+
+
+    if (userChoice === PCRAND) { return "Empate" }
+    else if (GanaUser(rules[userChoice], PCRAND)){
+        return "Gana Usuario"
+    }else {
+        return "Gana Computer"
+    }
 }
 
 
-console.log(jugar("rock"));
+console.log(jugar("spock"));

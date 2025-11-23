@@ -1,33 +1,41 @@
-import "bootstrap";
-import "./style.css";
+const choises = ["rock", "paper", "scissors", "lizard", "spock"]
+const rules = {
+    rock: ['scissors', "lizard"],
+    paper: ["rock", "spock"],
+    scissors: ["paper", "lizard"],
+    lizard: ["spock", "paper"],
+    spock: ["scissors", "rock"]
+}
 
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
 
-// window.onload = function() {
-//   //write your code here
-//   console.log("Hello Rigo from the console!");
-// };
+function eleccionPC(arr) {
+    const num = Math.floor(Math.random() * arr.length)
+    return arr[num]
+};
 
-// const choises = ["rock", "paper", "scissors", "lizard", "spock"]
-// const rules = {
-//   rock: ['scissors', "lizard"],
-//   paper: ["rock", "spock"],
-//   scissors: ["paper", "lizard"],
-//   lizard: ["spock", "paper"],
-//   spock: ["scissors", "rock"]
-// }
+const GanaUser = (Opciones, elecciondecomputadora) => {
+    for (const opcion of Opciones) {
+        if (opcion === elecciondecomputadora) {
+            return true
+        }
+        return false
+    }
+}
+
+function jugar(userChoice) {
+    const PCRAND = eleccionPC(choises)
+    console.log("El usuario Eligio:", userChoice);
+    console.log("Computer Eligio:", PCRAND);
 
 
-// function ChoiceComputer()=>{
-//           const eleccionPC = (items) => {
-//             const Aleat = Math.floor(Math.random()* items.length);
-//             return arr[Aleat];
-//         }};
+    if (userChoice === PCRAND) { return "Empate" }
+    else if (GanaUser(rules[userChoice], PCRAND)){
+        return "Gana Usuario"
+    }else {
+        return "Gana Computer"
+    }
+}
 
-//  const Choicecompu = ChoiceComputer(choises)
 
-// console.log(Choicecompu);
-
-console.log("hola");
+console.log(jugar("spock"));

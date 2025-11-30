@@ -37,4 +37,10 @@ function jugar(userChoice) {
 }
 
 
-console.log(jugar("spock"));
+// console.log(jugar("spock"));
+
+
+// document.getElementById(Piedra).addEventListener("click", function(){
+//     document.getElementById("userChoice").innerHTML = "Piedra";
+
+// })

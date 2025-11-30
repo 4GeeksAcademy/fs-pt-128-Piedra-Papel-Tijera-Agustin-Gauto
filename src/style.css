@@ -3,3 +3,29 @@
 body{
     background: white;
 }
+
+.Titulo_juego {
+    color: rgba(98, 228, 131, 0.781);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagen_del_juego {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: auto;
+}
+
+.divimagen {
+    width: 150px ;
+    height: 150px;
+}
+
+.botones {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

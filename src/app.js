@@ -10,7 +10,6 @@ const rules = {
     spock: ["scissors", "rock"]
 }
 
-
 /// funcion que eligue aleatoriamente una opcion
 function eleccionPC(arr) {
     const num = Math.floor(Math.random() * arr.length)
@@ -37,10 +36,12 @@ function jugar(userChoice) {
 }
 
 
-// console.log(jugar("spock"));
+console.log(jugar("spock"));
 
 
-// document.getElementById(Piedra).addEventListener("click", function(){
-//     document.getElementById("userChoice").innerHTML = "Piedra";
+// const ResultadoDelJuego = () => {
+//     jugar("rock");
 
-// })
+// }
+
+// document.getElementById("Piedra").addEventListener("click",ResultadoDelJuego)

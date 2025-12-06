@@ -1,13 +1,13 @@
 // opciones a elegir del jugador
-const choises = ["rock", "paper", "scissors", "lizard", "spock"]
+const choises = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
 
 // reglas del juego
 const rules = {
-    rock: ['scissors', "lizard"],
-    paper: ["rock", "spock"],
-    scissors: ["paper", "lizard"],
-    lizard: ["spock", "paper"],
-    spock: ["scissors", "rock"]
+    Rock: ['Scissors', "Lizard"],
+    Paper: ["Rock", "Spock"],
+    Scissors: ["Paper", "Lizard"],
+    Lizard: ["Spock", "Paper"],
+    Spock: ["Scissors", "Rock"]
 }
 
 /// funcion que eligue aleatoriamente una opcion
@@ -25,8 +25,12 @@ const GanaUser = (Opciones, elecciondecomputadora) => {
 }
 
 /// funcion que utiliza funciones anteriores para iniciar el juego
+
+const PCRAND = eleccionPC(choises)
+
+
 function jugar(userChoice) {
-    const PCRAND = eleccionPC(choises)
+    
     console.log("El usuario Eligio:", userChoice); console.log("Computer Eligio:", PCRAND);
     
 
@@ -35,13 +39,90 @@ function jugar(userChoice) {
         return "Gana Computer"
 }
 
+const resultadoFinal = jugar("Rock")
+const resultadofinalPapel = jugar("Paper")
+const resultadofinalScissors = jugar("Scissors")
+const resultadofinalLizard = jugar("Lizard")
+const resultadofinalSpock = jugar("Spock")
 
-console.log(jugar("spock"));
 
 
-// const ResultadoDelJuego = () => {
-//     jugar("rock");
+// console.log(jugar("Spock"));
 
-// }
 
-// document.getElementById("Piedra").addEventListener("click",ResultadoDelJuego)
+const resultadoDelJuego = () => {
+    jugar("Rock");
+    
+
+    const resultadoFinalInner = document.querySelector(".card-title")
+        resultadoFinalInner.innerHTML = resultadoFinal
+
+    const userChoiceInner = document.querySelector(".card-text")
+    userChoiceInner.innerHTML = "Elegiste:" + " " + "Rock"
+
+    const pcrandrand = document.querySelector(".card-texto")
+        pcrandrand.innerHTML = "Computer Eligio:" + " " + PCRAND  
+
+}
+document.getElementById("Piedra").addEventListener("click",resultadoDelJuego)
+
+const resultadoDelJuegoPaper = () => {
+    jugar("Paper");
+
+    const resultadoFinalInner = document.querySelector(".card-title")
+        resultadoFinalInner.innerHTML = resultadofinalPapel
+
+    const userChoiceInner = document.querySelector(".card-text")
+    userChoiceInner.innerHTML = "Elegiste:" + " " + "Paper"
+
+    const pcrandrand = document.querySelector(".card-texto")
+        pcrandrand.innerHTML = "Computer Eligio:" + " " + PCRAND  
+
+}
+document.getElementById("Papel").addEventListener("click",resultadoDelJuegoPaper)
+
+const resultadoDelJuegoTijera = () => {
+    jugar("Scissors");
+
+    const resultadoFinalInner = document.querySelector(".card-title")
+        resultadoFinalInner.innerHTML = resultadofinalScissors
+
+    const userChoiceInner = document.querySelector(".card-text")
+    userChoiceInner.innerHTML = "Elegiste:" + " " + "Scissors"
+
+    const pcrandrand = document.querySelector(".card-texto")
+        pcrandrand.innerHTML = "Computer Eligio:" + " " + PCRAND  
+
+}
+document.getElementById("Tijera").addEventListener("click",resultadoDelJuegoTijera)
+
+const resultadoDelJuegoLagarto = () => {
+    jugar("Lizard");
+
+    const resultadoFinalInner = document.querySelector(".card-title")
+        resultadoFinalInner.innerHTML = resultadofinalLizard
+
+    const userChoiceInner = document.querySelector(".card-text")
+    userChoiceInner.innerHTML = "Elegiste:" + " " + "Lizard"
+
+    const pcrandrand = document.querySelector(".card-texto")
+        pcrandrand.innerHTML = "Computer Eligio:" + " " + PCRAND  
+
+}
+document.getElementById("Lagarto").addEventListener("click",resultadoDelJuegoLagarto)
+
+const resultadoDelJuegoSpock = () => {
+    jugar("Spock");
+
+    const resultadoFinalInner = document.querySelector(".card-title")
+        resultadoFinalInner.innerHTML = resultadofinalSpock
+
+    const userChoiceInner = document.querySelector(".card-text")
+    userChoiceInner.innerHTML = "Elegiste:" + " " + "Spock"
+
+    const pcrandrand = document.querySelector(".card-texto")
+        pcrandrand.innerHTML = "Computer Eligio:" + " " + PCRAND  
+
+}
+document.getElementById("Spock").addEventListener("click",resultadoDelJuegoSpock)
+
